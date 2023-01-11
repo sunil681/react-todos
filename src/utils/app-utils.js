@@ -1,1 +1,1 @@
-export const todoUrl = 'https://dummyjson.com/todos';
+export const todoUrl = 'https://dummyjson.com/todos'

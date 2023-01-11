@@ -1,12 +1,12 @@
-import React, { StrictMode } from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
-import { createRoot } from 'react-dom/client';
+import React, { StrictMode } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { createRoot } from 'react-dom/client'
 
-import App from './App';
+import App from './App'
 
-const queryClient = new QueryClient();
-const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
+const queryClient = new QueryClient()
+const rootElement = document.getElementById('root')
+const root = createRoot(rootElement)
 
 root.render(
   <StrictMode>
@@ -14,4 +14,4 @@ root.render(
       <App />
     </QueryClientProvider>
   </StrictMode>
-);
+)

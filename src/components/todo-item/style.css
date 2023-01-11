@@ -1,6 +1,6 @@
 .completed {
   text-decoration: line-through;
-  color: lightgrey;
+  color: red;
 }
 
 .todo-item {
