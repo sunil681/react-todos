@@ -1,0 +1,21 @@
+.completed {
+  text-decoration: line-through;
+  color: lightgrey;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 5px;
+}
+
+label {
+  font-family: 'Arial';
+  font-size: 14px;
+}
+
+[type='checkbox'] {
+  margin-right: 10px;
+  vertical-align: middle;
+}
