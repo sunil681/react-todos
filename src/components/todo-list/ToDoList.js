@@ -2,17 +2,11 @@ import React, { useState, useEffect } from 'react';
 import ToDoItem from '../todo-item/ToDoItem.js';
 import './style.css';
 
-export default function ToDoList() {
-  const [todos, setTodos] = useState([]);
-
-  useEffect(() => {
-    fetch('https://dummyjson.com/todos')
-      .then((res) => res.json())
-      .then((res) => setTodos(res.todos));
-  }, []);
+export default function ToDoList(props) {
+  const todos = props.todos;
 
   const todoClickHandler = (todo) => {
-    setTodos(
+    props.setTodos(
       todos.map((item) => {
         if (item.id === todo.id) {
           item.completed = !item.completed;
@@ -24,6 +18,9 @@ export default function ToDoList() {
 
   return (
     <div>
+      <label className={'list-label'}>
+        List of Todos - {todos.filter((todo) => !todo.completed).length} pending
+      </label>
       <ul className={'todo-container'}>
         {todos.map((todo) => {
           return (

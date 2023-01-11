@@ -3,3 +3,8 @@
   list-style-type: none;
   background-color: lightgoldenrodyellow;
 }
+
+.list-label {
+  font-size: 20px;
+  font-weight: 600;
+}
