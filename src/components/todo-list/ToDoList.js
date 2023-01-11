@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ToDoItem from '../todo-item/ToDoItem.js';
 import './style.css';
 
@@ -12,6 +11,17 @@ export default function ToDoList() {
       .then((res) => setTodos(res.todos));
   }, []);
 
+  const todoClickHandler = (todo) => {
+    setTodos(
+      todos.map((item) => {
+        if (item.id === todo.id) {
+          item.completed = !item.completed;
+        }
+        return item;
+      })
+    );
+  };
+
   return (
     <div>
       <ul className={'todo-container'}>
@@ -22,16 +32,7 @@ export default function ToDoList() {
               id={todo.id}
               key={`key-${todo.id}`}
               completed={todo.completed}
-              onChange={() => {
-                setTodos(
-                  todos.map((item) => {
-                    if (item.id === todo.id) {
-                      item.completed = !item.completed;
-                    }
-                    return item;
-                  })
-                );
-              }}
+              onChange={() => todoClickHandler(todo)}
             />
           );
         })}
