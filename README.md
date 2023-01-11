@@ -1,3 +1,3 @@
 # react-todos
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-tgewzb)
+This is a sample to-do application built using react 
